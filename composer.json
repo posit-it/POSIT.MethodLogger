@@ -1,10 +1,21 @@
 {
   "name":"posit\/methodlogger",
   "type":"typo3-flow-package",
-  "description":"",
+  "description":"Un package di esempio che implementa un logger di chiamate a metodo.",
+  "homepage": "http://www.posit.it/",
+  "keywords": ["example"],
+  "license": ["MIT"],
+  "authors": [
+      {
+          "name": "Tarcisio Fedrizzi",
+          "homepage": "http://www.posit.it/"
+      }
+  ],
+
   "require":
   {
-    "typo3\/flow" : "*"
+    "typo3\/flow" : "*",
+    "typo3\/fluid" : "*"
   },
   "autoload":
   {
