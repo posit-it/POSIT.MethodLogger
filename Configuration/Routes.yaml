@@ -1,0 +1,6 @@
+-
+  name: "Mostra la lista delle chiamate a metodo loggate"
+  uriPattern: 'methodlogger'
+  defaults:
+    '@controller' : 'MethodLog'
+    '@action'     : 'index'

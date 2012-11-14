@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>
+      Log delle chiamate
+    </title>
+  </head>
+  <body>
+    <h1>Log delle chiamate</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Data
+          </th>
+          <th>
+            Messaggio
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <f:for each="{methodLogs}" as="methodLog">
+          <tr>
+            <td>{methodLog.date -> f:format.date(format: "d/m/Y H:i:s")}</td>
+            <td>{methodLog.message}</td>
+          </tr>
+        </f:for>
+      </tbody>
+    </table>
+  </body>
+</html>
