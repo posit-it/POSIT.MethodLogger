@@ -82,16 +82,22 @@ class LogMethodAspect {
 	}
 
 	/**
+	 * Definisce il pointcut che seleziona tutti i metodi annotati con LogMethod
+	 *
+	 * @Flow\Pointcut("methodAnnotatedWith(POSIT\MethodLogger\Annotations\LogMethod)")
+	 */
+	public function methodsAnnotatedWithLogMethod() {}
+
+	/**
 	 * Salva un oggetto che descrive una chiamata al metodo annotato nel database.
 	 * 
 	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint Il punto di join corrente
 	 * @return void
-	 * @Flow\Around("methodAnnotatedWith(POSIT\MethodLogger\Annotations\LogMethod)")
+	 * @Flow\Around("POSIT\MethodLogger\Aspect\LogMethodAspect->methodsAnnotatedWithLogMethod")
 	 */
 	public function runMethodLogging(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		$logMethod = $this->getLogMethodAnnotation($joinPoint);
 		$this->logMessage($joinPoint, $logMethod);
-error_log('asd');
 		return $joinPoint->getAdviceChain()->proceed($joinPoint);
 	}
 
